@@ -8,19 +8,15 @@ export default class WikiLinks extends Component {
     }
     
     componentDidMount() {
-        WikiAPi.getLinks(this.props.title).then(
+        WikiApi.getLinks(this.props.title).then(
             links=> this.setState({ links: links }));
     }
+    
 
   render() {
     var links = this.state.links;
-    var items = [];
     
-    for (var i=0; i<links.length; i++) {
-        items.push(<p>{links[i]}</p>);
-    }
-    
-    var coolerItems = links.map(link => <p>{link}</p>);
+    var coolerItems = links.map(link => <button onClick={coolerItems}>{link}</button>);
 
     return (
       <div>

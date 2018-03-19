@@ -7,6 +7,11 @@ export default class WikiSetup extends Component {
     super(props);
     this.state = { title: '' };
   }
+  
+  handleClick(e) {
+    var title = this.state.title;
+    this.setState({ title: title + "!" });
+  }
 
   componentDidMount() {
     this.setState({ title: 'Los Angeles' });

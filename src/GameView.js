@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import WikiApi from './WikiApi.js';
+import { Jumbotron, Button } from 'react-bootstrap';
 
 export default class GameView extends Component {
   constructor(props) {
@@ -19,13 +20,15 @@ export default class GameView extends Component {
       });
   }
   
+  
   render() {
     var currentTitle = this.props.title;
 
     return (
-      <div>
-        {this.state.summary}
-      </div>
+      <Jumbotron>
+        <h1>{this.props.title}</h1>
+        <p>{this.state.summary}</p>
+      </Jumbotron>
     );
   }
 }
